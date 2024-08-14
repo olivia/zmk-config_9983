@@ -159,7 +159,7 @@
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 	     	flavor = "tap-preferred";
-	      	tapping-term-ms = <200>;
+	      	tapping-term-ms = <300>;
 	      	quick-tap-ms = <125>;
 	      	require-prior-idle-ms = <125>;
 	      	bindings = <&tap>, <&tap>;
@@ -238,7 +238,7 @@
             bindings = <        
                 		&kp LG(LBKT)                                                                            	 &kp LG(RBKT)
 
-    	         	&kp PG_DN    			 &mtt C_PREV C_VOL_DN		      &kp C_PP			&mtt C_NEXT C_VOL_UP	 &kp PG_UP
+    	         	&kp PG_DN    			 &kp C_VOL_DN		      &kp C_PP			&kp C_VOL_UP	 &kp PG_UP
 
     &mtt TILDE HASH	   	&mtt HOME N1	   &mtt UP	N2	   &mtt PG_UP   N3	   &mtt LBKT LPAR	&mtt RBKT RPAR	   &mtt LT UNDER     &mtt GT MINUS	 &mtt CARET PLUS	&mtt PERCENT AT
     &mtt EQUAL STAR		&mtt LEFT N4	   &mtt DOWN	N5	   &mtt RIGHT	N6	   &mtt BSLH SLASH	&mtt PIPE COLON	   &mtt AMPS SEMI    &mtt APOS APOS	 &mtt DQT DQT     	&mtt DEL BSPC
