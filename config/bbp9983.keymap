@@ -144,6 +144,17 @@
             bindings = <&ext_power &kp>;
         };
 
+
+  	mtt1: mod_tap_tap {
+		compatible = "zmk,behavior-hold-tap";
+		#binding-cells = <2>;
+	     	flavor = "tap-preferred";
+	      	tapping-term-ms = <500>;
+	      	quick-tap-ms = <125>;
+	      	require-prior-idle-ms = <125>;
+	      	bindings = <&tap>, <&tap>;
+   	 };
+
   	mtt: mod_tap_tap {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
@@ -208,15 +219,15 @@
                               \      aA        |       0        |                    SPACE                  |          SYM          |         aA    /
                                 -------------------------------------------------------------------------------------------------------------------
         */
-                 		&none                                                                                	&none
+                 		&mkp LCLK                                                                                	&mkp RCLK
 
 		            &kp  TAB			 &sk GLOBE		      &mkp LCLK			&glb ESC H		 &sk LALT
 
-    &mtt LS(Q) Q	&mtt LS(W) W      &mtt LS(E) E	&mtt LS(R) R     &mtt LS(T) T	&mtt LS(Y) Y	&mtt LS(U) U	&mtt LS(I) I	&mtt LS(O) O	     &mtt LS(P) P
-    &mtt LS(A) A	&mtt LS(S) S      &mtt LS(D) D	&mtt LS(F) F     &mtt LS(G) G	&mtt LS(H) H	&mtt LS(J) J	&mtt LS(K) K	&mtt LS(L) L         &kp BSPC
-    &ALTL		&mtt LS(Z) Z      &mtt LS(X) X	&mtt LS(C) C     &mtt LS(V) V	&mtt LS(B) B	&mtt LS(N) N	&mtt LS(M) M	&glb LG(SPACE) N     &kp ENTER
+    &mtt1 LS(Q) Q	&mtt1 LS(W) W      &mtt1 LS(E) E	&mtt1 LS(R) R     &mtt1 LS(T) T	&mtt1 LS(Y) Y	&mtt1 LS(U) U	&mtt1 LS(I) I	&mtt1 LS(O) O	     &mtt1 LS(P) P
+    &mtt1 LS(A) A	&mtt1 LS(S) S      &mtt1 LS(D) D	&mtt1 LS(F) F     &mtt1 LS(G) G	&mtt1 LS(H) H	&mtt1 LS(J) J	&mtt1 LS(K) K	&mtt1 LS(L) L         &kp BSPC
+    &ALTL		&mtt1 LS(Z) Z      &mtt1 LS(X) X	&mtt1 LS(C) C     &mtt1 LS(V) V	&mtt1 LS(B) B	&mtt1 LS(N) N	&mtt1 LS(M) M	&glb LG(SPACE) N     &kp ENTER
 
-    		         &SHFT				 &mtt C_EJECT LG(LC(Q))		&kp SPACE		&ECTRL			 &sk LGUI
+    		         &SHFT				 &mtt1 C_EJECT LG(LC(Q))		&kp SPACE		&ECTRL			 &sk LGUI
 
             >;
         };
@@ -225,7 +236,7 @@
         alt_layer {
 
             bindings = <        
-                		&none                                                                            	 &none
+                		&kp LG(LBKT)                                                                            	 &kp LG(RBKT)
 
     	         	&kp PG_DN    			 &mtt C_PREV C_VOL_DN		      &kp C_PP			&mtt C_NEXT C_VOL_UP	 &kp PG_UP
 
