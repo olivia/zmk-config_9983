@@ -145,7 +145,7 @@
         };
 
 
-  	mtt1: mod_tap_tap {
+  	mtt1: mod_tap_tap_l0 {
 		compatible = "zmk,behavior-hold-tap";
 		#binding-cells = <2>;
 	     	flavor = "tap-preferred";
